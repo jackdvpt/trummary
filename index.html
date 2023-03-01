@@ -1,0 +1,169 @@
+<html>
+    <head>
+        <title>
+            Tom Walker Truckamary
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Martian+Mono&family=Poppins:ital,wght@1,900&family=Quicksand:wght@700&family=Tilt+Neon&display=swap" rel="stylesheet">
+        
+        <script>
+              $(function() {
+    $.getJSON("https://script.google.com/macros/s/AKfycbwUKtgJFjK0AlCG7OG3Baw-TT4V0Nf7BbREsv2YI5qpAOhUkI5wFbbCwJnnQXSv7GCSAg/exec", function(data){
+            var blocks = data.blocks
+            console.log(blocks)
+            $(".lds-ellipsis").remove();
+            for (i = 0;i<blocks.length; i ++){
+        
+                if (i%2==1){
+                    var current = '<div class="flex-container"><div class="child number">'+ blocks[i].desc+'</div><div class="child stat">'+ blocks[i].name+'</div></div>';
+          
+                }else{
+                    var current = '<div class="flex-container"><div class="child stat">'+ blocks[i].name+'</div><div class="child number">'+ blocks[i].desc+'</div></div>';
+          
+                }
+                        console.log(current)
+                    $(".everything").append(current);   // Append new elements
+            }
+        })
+        });
+        </script>
+        <style>
+            body{
+                background-color: #594545;
+            }
+.everything{
+    background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,248,234,1) 100%);
+  margin: auto;
+  width: 70%;
+  padding: 30px;
+  color:#9E7676;
+  font-family: 'Martian Mono', monospace;
+}
+h1{
+    text-align:center;
+    font-size: 50;
+    color:#815B5B;
+    font-family: 'Poppins', sans-serif; !important
+
+}
+.footer{
+    background:rgba(255,248,234,1);
+    margin: auto;
+  width: 70%;
+  padding: 30px;
+  color:#9E7676;
+  font-family: 'Martian Mono', monospace;
+}
+a{
+    
+  color:#9E7676;
+}
+.stat{
+font-family: 'Quicksand', sans-serif; !important
+    
+}
+.number{
+
+}
+
+.flex-container {
+    display: flex;
+}
+
+.child {
+    flex: 1;
+   font-size:50; 
+  text-align: center;
+    padding:50px;
+    height:150px;
+}  
+.intro{
+    font-size: 25;
+    margin-bottom: 50px;}
+.child:first-child {
+    margin-right: 20px;
+} 
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #9E7676;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+
+
+        </style>
+    </head>
+    <body>
+        <div class="everything">
+           <h1>Tom Walker Truck Final Summary</h1> 
+           <div class="intro">
+            Since {date} an australian comedian Tom Walker (For other people with the same name, see <a href = "https://en.wikipedia.org/wiki/Thomas_Walker">Thomas Walker (disambiguation)</a>.) has been streaming on twitch, he started off driving a big truck in America and then in Europe. The following are the stats of those truck streams
+           </div>
+       
+           <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+
+        </div>
+
+
+        <div class = "footer">
+Based on data compiled by: JackDVPT, Bedsores<br>
+Originally streamed on twitch.tv/tomwalker previously isgood
+
+        </div>
+    </body>
+</html>
